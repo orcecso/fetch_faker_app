@@ -1,43 +1,51 @@
-# faker_fectcher_exam
 
-A new Flutter project.
+**Faker Fetcher Exam**
 
-## Getting Started
+Welcome to the Faker Fetcher Exam project, a Flutter application designed to demonstrate proficiency in utilizing external APIs and handling common development challenges.
 
-make sure you have latest flutter or this version 3.19.2
+**Getting Started**
 
--read comments below on what to do next 
+Before proceeding, ensure that you have the latest version of Flutter installed or specifically version 3.19.2.
 
-## Issues
+Follow these steps to set up the project:
 
-there are issues currently happening on latest flutter: currently this is built using
-flutter : 3.19.2
-
-Normally to start this application, you will need to do as follows:
-
-at first run : 
-- flutter run pub get
+Run the following commands in your terminal:
+- flutter pub get
 - dart run build_runner build
-- run application ( connect to physical device first or emulator )
+- Launch the application by connecting to a physical device or emulator.
 
-then an issue will appear on logs preventing you to run : Bad state: Unable to generate package graph, no `D:\android\<YOUR_APP_NAME>\.dart_tool\flutter_gen\pubspec.yaml` found.
+However, note that there are currently some issues with the latest version of Flutter (3.19.2) that may prevent the application from running smoothly. Please refer to the "Issues" section below for more information and temporary fixes.
 
-this is an issue with .darttool that shows it cannot find pubspec.yaml file( but its on the root folder not inside .darttool).
+**Issues**
 
-## Temporary fix
-instead run it like this:
-flutter run pub get
-flutter clean 
-dart run build_runner build ( if ask for 3 options, delete cancel or list, just use delete or type 1 )
+Issue 1: Unable to Generate Package Graph
+When attempting to run the application, you may encounter an error message stating "Bad state: Unable to generate package graph, no D:\android\<YOUR_APP_NAME>\.dart_tool\flutter_gen\pubspec.yaml found."
 
-termporary workaround if you experience this issue
-running app on user side no problem , generating apk, tested on creating flutter web as well, no issues i found yet, but for dev in debugging or adding new feature, this happens often
+This issue arises due to a problem with the .dart_tool directory not correctly locating the pubspec.yaml file.
 
+Temporary Fix:
+To temporarily address this issue, follow these steps:
 
+Run the following commands in your terminal:
+flutter pub get
+flutter clean
+dart run build_runner build
+If prompted with options during the dart run build_runner build command, choose the option to delete (usually by typing '1' or selecting 'delete').
 
-another issue :
-Fakerapi is using placeimg.com to generate its images for the users profile, and because of that issues are occuring such as we cannot 
-render any image on our UI, i cannot find any docs that shows what type of file, or is it null or empty to handle the error, i already placed an error handler but needs further investigation from fakerapi side to properly address and handle it on our ui. 
+Issue 2: Image Rendering Error
+The application relies on Fakerapi, which utilizes placeimg.com to generate user profile images. However, issues arise when attempting to render these images on the UI.
+We have verifiewd that placeimg.com is already been deprecated and does not generate images anymore, hence the issue of blank or unknown file being sent to the faker api.
 
-bug ticket : https://github.com/Baseflow/flutter_cached_network_image/issues/491
+To temporarily address this issue, further investigation is required from the Fakerapi side to understand the nature of the problem and then we can provide appropriate handling on our UI.
 
+For updates on this issue, refer to the bug ticket: flutter_cached_network_image/issues/491
+
+Conclusion
+While the project may encounter some challenges due to external dependencies and issues with the latest Flutter version, it provides an excellent opportunity to explore debugging techniques and temporary workarounds. Your feedback and contributions towards resolving these issues are greatly appreciated.
+
+Thank you for your interest in the Faker Fetcher Exam project.
+
+Sincerely,
+Gray
+
+My profile Info : https://github.com/orcecso
